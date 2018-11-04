@@ -28,6 +28,13 @@ with open('Jibon.txt', 'w') as wf:
     wf.write('Python Programming\n')
     wf.write('Web Design\n')
 
+	
+
+# Example
+
+import math
+print(math.pi)
+
 
 
 
