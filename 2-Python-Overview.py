@@ -77,13 +77,11 @@ Python code is more clearly defined and visible to the eyes.
 """
 
 
-
 # Why Easy-to-maintain ?
 
 """
 Python's source code is fairly easy-to-maintain.
 """
-
 
 
 # Why A broad standard library ?
@@ -94,13 +92,11 @@ UNIX, Windows, and Macintosh.
 """
 
 
-
 # Why Interactive Mode ?
 
 """
 Python has support for an interactive mode which allows interactive testing and debugging of snippets of code.
 """
-
 
 
 # Why Portable ?
@@ -109,7 +105,6 @@ Python has support for an interactive mode which allows interactive testing and 
 Python can run on a wide variety of hardware platforms and 
 has the same interface on all platforms.
 """
-
 
 
 # Why Extendable ?
