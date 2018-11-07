@@ -4,7 +4,6 @@
 """
 
 
-
 """
 What is Variable ?
 Variables are nothing but reserved memory locations to store values.
