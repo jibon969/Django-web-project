@@ -1,3 +1,6 @@
+
+# Print Formatting in python
+
 """
     String Formatting
 """
@@ -111,4 +114,18 @@ print('\n')
 # or %r repr() Function
 print("converting to string %r" % (124))
 print('\n')
+
+
+"""
+Output formatting in python ?
+"""
+
+# Example
+
+a = input("Enter anything : ")
+
+print(a, end='')    # output গুলো পাশাপাশি show করবে ।
+
+print('\n')
+input("Press < Enter : ")
 
