@@ -1,5 +1,7 @@
-# Lets Learn input Function
 
+"""
+    Lets Learn input Function
+"""
 
 x = input('Enter anything : ')
 print(x)
@@ -48,7 +50,7 @@ print('\n')
 
 # More  Example
 
-a = " As you can see from this code, the function splits our original string which includes three colors and then stores each variable in a separate string"
+a = "As you can see from this code, the function splits our original string which includes three colors and then stores each variable in a separate string"
 
 b = a.split()
 print(b)
