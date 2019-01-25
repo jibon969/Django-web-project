@@ -103,6 +103,13 @@ print("One : {x} two : {y} three : {z}".format(x=1, y=2, z=3))
 print('\n')
 
 
+# Example
+
+message = " if x = {x} and y = {y}, then x+y = {z}".format(x=7, y=5, z=7+4)
+print(message)
+print('\n')
+
+
 # Converting to String
 
 print("Converting to String :- ")
