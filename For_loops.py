@@ -134,7 +134,6 @@ However, nothing happens when pass is executed. It results into no operation (NO
 '''
 
 
-
 '''
 Syntax of pass
     pass
