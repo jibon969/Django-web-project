@@ -1,5 +1,9 @@
+
+# Here is ignore all file which i dont needed !
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
+
 *.py[cod]
 *$py.class
 
