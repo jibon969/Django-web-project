@@ -1,0 +1,233 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Website </title>
+    <meta name="description" content="Free Bootstrap Theme by BootstrapMade.com">
+    <meta name="keywords" content="free website templates, free bootstrap themes, free template, free bootstrap, free website template">
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,700,300|Open+Sans:400,600,700,300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/font-awesome.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/animate.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+  </head>
+  <body>
+    <!--header-->
+    <header class="main-header" id="header">
+        <div class="bg-color">
+            <!--nav-->
+            <nav class="nav navbar-default navbar-fixed-top">
+                <div class="container">
+                    <div class="col-md-12">
+                        <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mynavbar" aria-expanded="false" aria-controls="navbar">
+                            <span class="fa fa-bars"></span>
+                        </button>
+                            <a href="index.html" class="navbar-brand"><i class="fa fa-home"></i></a>
+                        </div>
+                        <div class="collapse navbar-collapse navbar-right" id="mynavbar">
+                            <ul class="nav navbar-nav">
+                                <li class="active"><a href="#header">Home</a></li>
+                                <li><a href="#feature">Feature</a></li>
+                                <li><a href="#portfolio">Portfolio</a></li>
+                                <li><a href="#contact">Contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            <!--/ nav-->
+            <div class="container text-center">
+                <div class="wrapper wow fadeInUp delay-05s" >
+                    <h2 class="top-title">Web Design & Development</h2>
+                    <h3 class="title">Jibon</h3>
+                    <h4 class="sub-title">We Create amazing designs</h4>
+                    <button type="submit" class="btn btn-submit">Download Now</button>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!--/ header-->
+
+
+    <!-- Quite -->
+    <section id="cta-1">
+        <div class="container">
+            <div class="row">
+                <div class="cta-info text-center">
+                    <h3><span class="dec-tec">“</span>Make things as simple as possible, but not simpler.<span class="dec-tec">”</span> -Albert Einstein</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!---->
+
+
+
+    <!-- Features-->
+    <section id="feature" class="section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 wow fadeInLeft delay-05s">
+                    <div class="section-title">
+                        <h2 class="head-title">Features</h2>
+                        <hr class="botm-line">
+                        <p class="sec-para">
+                            Quality Web Content. There's one primary reason people use search engines and browse websites, and that is to search for information. ...
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <!-- Feature Section -->
+                    {% for f in queryset %}
+                        <div class="col-md-6 wow fadeInRight delay-02s">
+                            <div class="icon">
+                                <i class="{{ f.icon }}"></i>
+                            </div>
+                            <div class="icon-text">
+                                <h3 class="txt-tl">{{ f.title }}</h3>
+                                <p class="txt-para">{{ f.body }}</p>
+                            </div>
+                        </div>
+                    {% endfor %}
+                    <!-- Feature Section -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Subscribe -->
+    <section class="section-padding parallax bg-image-2 section wow fadeIn delay-08s" id="cta-2">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="cta-txt">
+                        <h3>Subscribe For Updates</h3>
+                        <p>Join our 1000+ subscribers and get access to the latest tools, freebies, product announcements and much more!</p>
+                    </div>
+                </div>
+                <div class="col-md-4 text-center">
+                    <a href="#" class="btn btn-submit">Subscribe Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!---->
+
+
+
+    <!-- Portfolio Section-->
+    <section class="section-padding wow fadeInUp delay-02s" id="portfolio">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-sm-12">
+                    <div class="section-title">
+                        <h2 class="head-title">Portfolio</h2>
+                        <hr class="botm-line">
+                        <p class="sec-para">
+                            Making your portfolio can be tough. Should it be simple or Complex? Single page or multiple? What should you showcase first?
+                            Stop stressing and take a look at these ten great examples of Web Developer Portfolios…
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Picture -->
+                <div class="col-md-9 col-sm-12">
+                   {% for img in queryset2 %}
+                        <div class="col-md-4 col-sm-6 padding-right-zero">
+                            <div class="portfolio-box design">
+                                <img src="{{ img.image.url }}" alt="this is an image">
+                            </div>
+                        </div>
+                   {% endfor %}
+                </div>
+             <!-- End Picture -->
+            </div>
+        </div>
+    </section>
+    <!---->
+    <!---->
+    <section class="section-padding wow fadeInUp delay-05s" id="contact">
+        <div class="container">
+            <div class="row white">
+                <div class="col-md-8 col-sm-12">
+                    <div class="section-title">
+                        <h2 class="head-title black">Contact Us</h2>
+                        <hr class="botm-line">
+                        <p class="sec-para black">You can contact anytime and anywhere</p>
+                    </div>
+                </div>
+                <div class="col-md-12 col-sm-12">
+                    <div class="col-md-4 col-sm-6" style="padding-left:0px;">
+                        <h3 class="cont-title">Email Us</h3>
+                        <div id="sendmessage">Your message has been sent. Thank you!</div>
+                        <div id="errormessage"></div>
+                        <div class="contact-info">
+                            <form action="" method="post" role="form" class="contactForm">
+                                {% csrf_token %}
+                                <div class="form-group">
+                                    <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                                    <div class="validation"></div>
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
+                                    <div class="validation"></div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+                                    <div class="validation"></div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
+                                    <div class="validation"></div>
+                                </div>
+                                <button type="submit" class="btn btn-send btn-block">Submit</button>
+                            </form>
+                        </div>
+                        
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <h3 class="cont-title">Visit Us</h3>
+                        <div class="location-info">
+                            <p class="white"><span aria-hidden="true" class="fa fa-map-marker"></span>Dhaka, Bangladesh</p>
+                            <p class="white"><span aria-hidden="true" class="fa fa-phone"></span>Phone: +88 01840144627</p>
+                            <p class="white"><span aria-hidden="true" class="fa fa-envelope"></span>Email: <a href="" class="link-dec">jayed.swe@gmail.com</a></p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="contact-icon-container hidden-md hidden-sm hidden-xs">
+                            <span aria-hidden="true" class="fa fa-envelope-o"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!---->
+
+    <!--Footer Section-->
+<
+    <!---->
+    <footer class="" id="footer">
+        <div class="container">
+            <div class="row">
+                <p class="text-center white">Copyright 2019 &copy; website</p>
+            </div>
+        </div>
+    </footer>
+    <!---->
+    <!--contact ends-->
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/jquery.easing.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/wow.js' %}"></script>
+    <script src="{% static 'js/custom.js' %}"></script>
+
+  </body>
+</html>
