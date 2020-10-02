@@ -1,5 +1,8 @@
-from django.shortcuts import render
-from .models import Contact, Feature, Portfolio
+from django.shortcuts import render, redirect
+from .models import Contact, Feature, Portfolio, Subscribe
+from django.contrib import messages
+import json
+from django.http import JsonResponse
 # Create your views here.
 
 
@@ -28,3 +31,24 @@ def home(request):
     }
 
     return render(request, 'index.html', context)
+
+def subscribe(request):
+    if request.method == "POST":
+        email = request.POST['sub_email']
+
+        obj = Subscribe(email=email)
+        obj.save()
+        messages.success(request, "Your email has been sucessfully ragister.")
+        return redirect('home')
+    else:
+        return redirect('home')
+
+def subscribe_validation(request):
+    if request.method == "POST":
+        data = json.loads(request.body)
+        email = data['emailid']
+
+        if Subscribe.objects.filter(email=email).exists():
+            return JsonResponse({'email_error':'This email already ragister, try another one'}, status=409)
+
+        return JsonResponse({'email_valid':True})

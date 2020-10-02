@@ -111,7 +111,14 @@
                     </div>
                 </div>
                 <div class="col-md-4 text-center">
-                    <a href="#" class="btn btn-submit">Subscribe Now</a>
+                    {% if messages %}{% for message in messages %}
+                    <p style="color: white; font-size: 30px;">{{ message }}</p>{% endfor %} {% else %}
+                    <form action="{% url 'subscribe' %}" method="POST"> {% csrf_token %}
+                        <div class="form-group">
+                    <input type="email" class="form-control" name="sub_email" id="sub_email" placeholder="Enter Email" required>
+                    <div id="helpIdemail" class="text-muted key-error-email" style="display: none; color: white;"></div></div>
+                    <button type="submit" class="btn btn-submit Subscribe_button">Subscribe Now</button>
+                </form>{% endif %}
                 </div>
             </div>
         </div>
@@ -223,6 +230,7 @@
     </footer>
     <!---->
     <!--contact ends-->
+    <script src="{% static 'js/validation.js' %}"></script>
     <script src="{% static 'js/jquery.min.js' %}"></script>
     <script src="{% static 'js/jquery.easing.min.js' %}"></script>
     <script src="{% static 'js/bootstrap.min.js' %}"></script>

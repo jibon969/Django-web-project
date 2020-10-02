@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils.timezone import now
 
 # Create your models here.
 
@@ -38,9 +39,9 @@ class Contact(models.Model):
     def __str__(self):
         return self.name
 
+class Subscribe(models.Model):
+    email = models.CharField(max_length=50)
+    timestamp = models.DateTimeField(default=now)
 
-
-
-
-
-
+    def __str__(self):
+        return self.email
